@@ -27,12 +27,13 @@
             />
         <ShellContent 
             Title="Visualizar"
-            ContentTemplate="{DataTemplate Views:pgVisCarro}"
+            ContentTemplate="{DataTemplate Views:pgListaCarro}"
             />
         
     </FlyoutItem>
 
     <Shell.FlyoutFooter>
-        <Label Text="Versão: 1.0.0.0"/>
+        <Label Text="Created by: Luís Fernando, Kauê e Paulo
+               Version 1.0.0.0"/>
     </Shell.FlyoutFooter>
 </Shell>

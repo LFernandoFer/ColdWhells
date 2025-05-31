@@ -4,11 +4,11 @@
              x:Class="ColdWheels.Views.pgCadCarro"
              Title="pgCadCarro">
     <ScrollView>
-    <StackLayout>
+    <StackLayout Padding="20">
         <Label 
             Text="Cadastro"/>
         
-        <Image Source="dotnet_bot.png"
+        <Image Source="car.png"
                HeightRequest="200"
                x:Name="carroImg"/>
         <!--Adicionar a foto do carro em questao
@@ -22,7 +22,7 @@
                x:Name="txtLote"/>
     
         <Label Text="Ano:"/>
-        <Entry Placeholder="Ano"
+        <Entry Placeholder="Ano:"
                x:Name="txtAno"/>
 
         <Label Text="Obtido"/>

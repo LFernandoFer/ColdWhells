@@ -3,8 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ColdWheels.Views.pgVisCarro"
              Title="pgVisCarro">
-    <StackLayout>
+    <StackLayout Padding="20">
         <Label 
             Text="Visualizar Carros"/>
+
+        <Image x:Name="imgCarro"/>
+        
+        <Label x:Name="txtNome"
+               Text="Nome: "/>
+        
+        <Label x:Name="txtLote"
+               Text="Lote: "/>
+        
+        <Label x:Name="txtAnoFab"
+               Text="Fabricação: "/>
+        <Image x:Name="imgObt" Source="car.png" 
+               MaximumHeightRequest="50"
+               HorizontalOptions="Start"/>
+        <Image x:Name="imgDes" Source="heart.png"
+               MaximumHeightRequest="50"
+               HorizontalOptions="Start"/>
     </StackLayout>
 </ContentPage>

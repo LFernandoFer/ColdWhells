@@ -75,6 +75,9 @@
 	  <MauiXaml Update="Views\pgCadCarro.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\pgListaCarro.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\pgVisCarro.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
