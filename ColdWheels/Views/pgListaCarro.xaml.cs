@@ -6,4 +6,9 @@ public partial class pgListaCarro : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void tapDeletar_Tapped(object sender, TappedEventArgs e)
+    {
+	 
+    }
 }
