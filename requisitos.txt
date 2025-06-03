@@ -1,0 +1,17 @@
+
+* Menu
+ - Imagem no menu
+ 
+* Tela de cadastro
+
+ - Temática de hotwells
+ - Não permitir salvar com campos vazios
+ - Mensagem de feedback ao salvar ou n no banco 
+
+* Tela de Vis
+ - Filtrar pelo modelo do carrinho
+ -  || carrinhos adquiridos
+ -  ||  ||  desejados
+ - Lista dos carrinhos (table)
+  { imagem, modelo, lote, ano}
+ - Icones (carrinho, coração e lixeira) 
