@@ -67,10 +67,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Controllers\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="Views\pgCadCarro.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

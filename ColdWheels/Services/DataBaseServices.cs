@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SQLite;
 using PCLExt.FileStorage.Folders;
 
-namespace AppListView.Services
+namespace ColdWheels.Services
 {
    
     public class DatabaseService
