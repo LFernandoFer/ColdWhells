@@ -1,4 +1,5 @@
 using ColdWheels.Models;
+using ColdWheels.Controllers;
 using ColdWheels.Services;
 namespace ColdWheels.Views;
 
@@ -9,7 +10,40 @@ public partial class pgCadCarro : ContentPage
 		InitializeComponent();
 	}
 
-	private Carro RetornarCarro()
+    private void btnSalvar_Clicked(object sender, EventArgs e)
+    {
+        
+        if(!ValidarCampos())
+		{
+			DisplayAlert("Atenção", "Os campos devem estar preenchidos corretamente", "OK");
+			return;
+		}
+        Carro carro = RetornarCarro();
+		IsDesejado(carro);
+		IsObtido(carro);
+		if (SalvarCarro(carro))
+		{
+            DisplayAlert("Sucesso!!", "Carrinho salvo com Sucesso", "OK");
+            LimparCampos();
+        }
+		return;
+    }
+
+    private bool ValidarCampos()
+    {
+        if (string.IsNullOrEmpty(txtNome.Text) ||
+           string.IsNullOrEmpty(txtAno.Text) ||
+           string.IsNullOrEmpty(txtLote.Text)//||
+                                             //Validar caminho da imagem
+           )
+        {
+            DisplayAlert("Atenção", "Os campos não podem estar vazios", "OK");
+            return false;
+        }
+        return true;
+    }
+
+    private Carro RetornarCarro()
 	{
 		Carro carro = new Carro();
 		carro.Nome = txtNome.Text;
@@ -21,20 +55,29 @@ public partial class pgCadCarro : ContentPage
 		return carro;
 	}
 
-	private bool ValidarCampos(Carro carro)
+	private void IsObtido(Carro carro)
 	{
-		if (string.IsNullOrEmpty(txtNome.Text)||
-           string.IsNullOrEmpty(txtAno.Text)||
-           string.IsNullOrEmpty(txtLote.Text)//||
-		   //Validar caminho da imagem
-		   )
+		if(ckbObtido.IsChecked)
 		{
-			DisplayAlert("Atenção", "Os campos não podem estar vazios", "OK");
-			return false;
+			carro.Obtido = true;
 		}
-		return true;
 	}
 
+    private void IsDesejado(Carro carro)
+    {
+        if (ckbDesejado.IsChecked)
+        {
+            carro.Desejado = true;
+        }
+    }
+
+    private bool SalvarCarro(Carro carro)
+	{
+		CarroController controller = new CarroController();
+		controller.Insert(carro);
+		return true;
+	}
+	
 	private void LimparCampos()
 	{
 		txtNome.Text = "";
@@ -43,14 +86,4 @@ public partial class pgCadCarro : ContentPage
 		ckbDesejado.IsChecked = false;
 		ckbObtido.IsChecked = false;
 	}
-
-    private void btnSalvar_Clicked(object sender, EventArgs e)
-    {
-		Carro carro = RetornarCarro();
-		ValidarCampos(carro);
-		LimparCampos();
-
-
-		//DisplayAlert("Sucesso!!", "Carrinho salvo com Sucesso", "OK");
-    }
 }

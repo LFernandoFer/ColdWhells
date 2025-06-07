@@ -68,6 +68,28 @@ namespace ColdWheels.Controllers
                 Where(x => x.Nome.Contains(value)).
                 ToList();
         }
+        public List<Carro> Filtrar(string nome = null, bool? obtido = null, bool? desejado = null)
+        {
+            
+            var query = connection.Table<Carro>().AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(nome))
+            {
+                query = query.Where(x => x.Nome.Contains(nome));
+            }
+
+            if (obtido.HasValue)
+            {
+                query = query.Where(x => x.Obtido == obtido.Value);
+            }
+
+            if (desejado.HasValue)
+            {
+                query = query.Where(x => x.Desejado == desejado.Value);
+            }
+
+            return query.ToList();
+        }
     }
 }
 
