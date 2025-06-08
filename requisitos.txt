@@ -17,3 +17,5 @@
  ✅ Lista dos carrinhos (table)
   { imagem, modelo, lote, ano}
  ✅ Icones (carrinho, coração e lixeira) 
+
+ -Alterar a cor do ícone do carro
