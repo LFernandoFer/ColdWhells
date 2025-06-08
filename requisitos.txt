@@ -9,13 +9,15 @@
  ✅ Mensagem de feedback ao salvar ou n no banco 
 
 * Tela de Vis
- - Filtrar pelo modelo do carrinho
- -  || carrinhos adquiridos
- -  ||  ||  desejados
- - Melhorar designe
+ ✅ Filtrar pelo modelo do carrinho
+ ✅  || carrinhos adquiridos
+ ✅  ||  ||  desejados
+ ✅ Adicionar excluir 
+ - Ajustar utilização dos filtros
+ - Ajustar ícones de desejo/obtido ao mudar seus valores
+ - Melhorar design
  
- ✅ Lista dos carrinhos (table)
-  { imagem, modelo, lote, ano}
- ✅ Icones (carrinho, coração e lixeira) 
 
- -Alterar a cor do ícone do carro
+ 
+
+

@@ -5,11 +5,20 @@ namespace ColdWheels.Views;
 
 public partial class pgCadCarro : ContentPage
 {
-	public pgCadCarro()
+    string selectedImagePath = "";
+    public pgCadCarro()
 	{
 		InitializeComponent();
 	}
-
+    private async void OnSelecionarImagem_Clicked(object sender, EventArgs e)
+    {
+        var result = await FilePicker.PickAsync();
+        if (result != null)
+        {
+            selectedImagePath = result.FullPath;
+            carroImg.Source = selectedImagePath;
+        }
+    }
     private void btnSalvar_Clicked(object sender, EventArgs e)
     {
         
@@ -49,7 +58,7 @@ public partial class pgCadCarro : ContentPage
 		carro.Nome = txtNome.Text;
 		carro.Lote = txtLote.Text;
 		carro.Ano = txtAno.Text;
-		carro.DirImagem = "";
+		carro.DirImagem = selectedImagePath;
 		carro.Desejado = false;
 		carro.Obtido = false;
 		return carro;
@@ -83,6 +92,7 @@ public partial class pgCadCarro : ContentPage
 		txtNome.Text = "";
 		txtLote.Text = "";
 		txtAno.Text = "";
+		selectedImagePath = "";
 		ckbDesejado.IsChecked = false;
 		ckbObtido.IsChecked = false;
 	}

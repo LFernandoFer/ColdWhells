@@ -77,7 +77,7 @@
                        WidthRequest="30">
                                             <Image.GestureRecognizers>
                                                 <TapGestureRecognizer 
-                            Tapped="tapDeletar_Tapped"
+                            Tapped="tapChangeDesejo_Tapped"
                             CommandParameter="{Binding .}"/>
                                             </Image.GestureRecognizers>
                                         </Image>
@@ -86,7 +86,8 @@
                        HeightRequest="30"
                        WidthRequest="30">
                                             <Image.GestureRecognizers>
-                                                <TapGestureRecognizer 
+                                                <TapGestureRecognizer
+                            Tapped="taChangeObtido_Tapped"                        
                             CommandParameter="{Binding .}"/>
                                             </Image.GestureRecognizers>
                                         </Image>
@@ -102,27 +103,7 @@
                                         </Image>
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout HorizontalOptions="End"
-                                             Padding="5"
-                                             Orientation="Horizontal">
-                                    <Image Source="icon_eye.png"
-                                           HeightRequest="30"
-                                           WidthRequest="30">
-                                        <Image.GestureRecognizers>
-                                            <TapGestureRecognizer 
-                                                CommandParameter="{Binding .}"/>
-                                        </Image.GestureRecognizers>
-                                    </Image>
-                                    <Image Source="icon_trash.png"
-                                           HeightRequest="30"
-                                           WidthRequest="30">
-                                        <Image.GestureRecognizers>
-                                            <TapGestureRecognizer 
-                                                Tapped="tapDeletar_Tapped"
-                                                CommandParameter="{Binding .}"/>
-                                        </Image.GestureRecognizers>
-                                    </Image>
-                                </StackLayout>
+                                
                             </StackLayout>
                         </Frame>
                     </ViewCell>
