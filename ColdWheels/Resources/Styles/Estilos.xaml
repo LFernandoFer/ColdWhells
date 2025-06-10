@@ -1,72 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                    x:Class="ColdWheels.Resources.Styles.Estilos">
+ <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="ColdWheels.Resources.Styles.Estilos">
 
-    <!-- Cores principais -->
-    <Color x:Key="PrimaryBlue">#1976D2</Color>
-    <Color x:Key="AccentOrange">#FF8F00</Color>
-    <Color x:Key="BackgroundLight">#F5F5F5</Color>
-    <Color x:Key="TextPrimary">#212121</Color>
-    <Color x:Key="TextSecondary">#757575</Color>
+        
+        <Color x:Key="PrimaryBlue">#1976D2</Color>
+        <Color x:Key="AccentOrange">#FF6F00</Color>
+        <Color x:Key="BackgroundLight">#F5F5F5</Color>
+        <Color x:Key="TextPrimary">#212121</Color>
+        <Color x:Key="TextSecondary">#757575</Color>
+        <Color x:Key="HotWheelsRed">#D50000</Color>
+        <Color x:Key="HotWheelsYellow">#FFD600</Color>
+        <Color x:Key="CardBackground">#FAFAFA</Color>
 
-    <!-- Espaçamentos -->
-    <Thickness x:Key="PagePadding">16</Thickness>
-    <x:Double x:Key="ControlSpacing">8</x:Double>
+        
+        <Thickness x:Key="PagePadding">16</Thickness>
+        <x:Double x:Key="ControlSpacing">8</x:Double>
+        <Thickness x:Key="MarginBottomControlSpacing">0,0,0,8</Thickness>
 
-    <!-- Margem com bottom spacing (0,0,0,8) -->
-    <Thickness x:Key="MarginBottomControlSpacing">0,0,0,8</Thickness>
-
-    <!-- Tamanhos de fonte -->
     <x:Double x:Key="FontXS">12</x:Double>
-    <x:Double x:Key="FontSM">14</x:Double>
-    <x:Double x:Key="FontMD">18</x:Double>
-    <x:Double x:Key="FontLG">24</x:Double>
-    <x:Double x:Key="FontXL">32</x:Double>
+        <x:Double x:Key="FontSM">14</x:Double>
+        <x:Double x:Key="FontMD">18</x:Double>
+        <x:Double x:Key="FontLG">24</x:Double>
+        <x:Double x:Key="FontXL">32</x:Double>
 
-    <!-- Estilos implícitos -->
     <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
-        <Setter Property="Padding" Value="{StaticResource PagePadding}" />
-        <Setter Property="BackgroundColor" Value="{StaticResource BackgroundLight}" />
-    </Style>
+            <Setter Property="Padding" Value="{StaticResource PagePadding}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource BackgroundLight}" />
+        </Style>
 
-    <Style TargetType="Label">
-        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
-    </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+            <Setter Property="FontSize" Value="{StaticResource FontSM}" />
+        </Style>
 
-    <Style TargetType="Button">
-        <Setter Property="FontSize" Value="{StaticResource FontSM}" />
-        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBlue}" />
-        <Setter Property="TextColor" Value="White" />
-        <Setter Property="CornerRadius" Value="5" />
-        <Setter Property="Padding" Value="10,5" />
-    </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="{StaticResource FontSM}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource HotWheelsRed}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="12,8" />
+        </Style>
 
-    <Style TargetType="Entry">
-        <Setter Property="FontSize" Value="{StaticResource FontSM}" />
-        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
-        <Setter Property="PlaceholderColor" Value="{StaticResource TextSecondary}" />
-        <Setter Property="BackgroundColor" Value="White" />
-        <Setter Property="Margin" Value="{StaticResource ControlSpacing}" />
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="{StaticResource FontSM}" />
+            <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+            <Setter Property="PlaceholderColor" Value="{StaticResource TextSecondary}" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="Margin" Value="{StaticResource ControlSpacing}" />
         <Setter Property="HeightRequest" Value="40" />
     </Style>
 
-    <Style TargetType="ListView">
-        <Setter Property="SeparatorVisibility" Value="None" />
-        <Setter Property="Margin" Value="{StaticResource ControlSpacing}" />
-    </Style>
+        <Style TargetType="Frame">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="BackgroundColor" Value="{StaticResource CardBackground}" />
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="Margin" Value="{StaticResource ControlSpacing}" />
+            <Setter Property="BorderColor" Value="{StaticResource AccentOrange}" />
+        </Style>
 
-    <Style TargetType="Frame">
-        <Setter Property="CornerRadius" Value="8" />
-        <Setter Property="BackgroundColor" Value="White" />
-        <Setter Property="HasShadow" Value="True" />
-        <Setter Property="Margin" Value="{StaticResource ControlSpacing}" />
-    </Style>
+        <Style TargetType="Image">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="{StaticResource MarginBottomControlSpacing}" />
+        </Style>
 
-    <!-- Estilo para Image (opcional) -->
-    <Style TargetType="Image">
-        <Setter Property="HorizontalOptions" Value="Center" />
-        <Setter Property="Margin" Value="{StaticResource MarginBottomControlSpacing}" />
-    </Style>
+        <Style x:Key="TitleLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="{StaticResource FontLG}" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource HotWheelsRed}" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
 
-</ResourceDictionary>
+        <Style x:Key="SectionLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="{StaticResource FontSM}" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{StaticResource PrimaryBlue}" />
+            <Setter Property="Margin" Value="0,5,0,0" />
+        </Style>
+    </ResourceDictionary>

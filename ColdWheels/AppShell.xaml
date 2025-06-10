@@ -4,51 +4,65 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Views="clr-namespace:ColdWheels.Views"
+    xmlns:Estilo ="clr-namespace:ColdWheels.Resources.Styles"
     Shell.FlyoutBehavior="Flyout"
     Title="Cold Wheels"
     Shell.TabBarIsVisible="False"
     Shell.NavBarIsVisible="False"
     >
 
-    
+
     <Shell.TitleView>
-        <Grid Padding="8">
+        <Grid Padding="8" BackgroundColor="#D62828">
             <Image Source="logo.jpg"
-             HeightRequest="40"
-             WidthRequest="120"
-             Aspect="AspectFit" />
+                   HeightRequest="40"
+                   WidthRequest="120"
+                   Aspect="AspectFit" />
         </Grid>
     </Shell.TitleView>
 
+    <!-- Cabeçalho do Menu Lateral -->
     <Shell.FlyoutHeader>
-        <StackLayout Padding="10" Spacing="4">
+        <StackLayout Padding="10" Spacing="4" BackgroundColor="#222">
             <Image Source="logo.jpg"
-             HeightRequest="60"
-             WidthRequest="180"
-             Aspect="AspectFit"/>
+                   HeightRequest="80"
+                   WidthRequest="180"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center" />
             <Label Text="Cold Wheels"
-             FontSize="24"
-             TextColor="Black"/>
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
             <Label Text="Usuário"
-             FontSize="14"
-             TextColor="Gray"/>
+                   FontSize="14"
+                   TextColor="#CCCCCC"
+                   HorizontalOptions="Center" />
         </StackLayout>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    <!-- Itens do Menu -->
+    <FlyoutItem Title="Navegação" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
-        Title="Cadastro"
-        ContentTemplate="{DataTemplate Views:pgCadCarro}" />
+            Title="Cadastro"
+            ContentTemplate="{DataTemplate Views:pgCadCarro}" />
         <ShellContent
-        Title="Visualizar"
-        ContentTemplate="{DataTemplate Views:pgListaCarro}" />
+            Title="Visualizar"
+            ContentTemplate="{DataTemplate Views:pgListaCarro}" />
     </FlyoutItem>
 
+    <!-- Rodapé do Menu -->
     <Shell.FlyoutFooter>
-        <Label Text="Created by: Luís Fernando, Kauê e Paulo&#x0a;Version 1.0.0.0"
-           FontSize="12"
-           HorizontalOptions="Center"
-           Padding="10"/>
+        <StackLayout BackgroundColor="#222" Padding="10">
+            <Label Text="Created by: Luís Fernando, Kauê e Paulo"
+                   FontSize="12"
+                   TextColor="#BBBBBB"
+                   HorizontalOptions="Center" />
+            <Label Text="Version 1.0.0.0"
+                   FontSize="12"
+                   TextColor="#777"
+                   HorizontalOptions="Center" />
+        </StackLayout>
     </Shell.FlyoutFooter>
 
 </Shell>

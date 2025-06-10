@@ -5,87 +5,67 @@
     xmlns:conv="clr-namespace:ColdWheels.Services"
     x:Class="ColdWheels.Views.pgListaCarro"
     Title="Lista de Carros">
-    
+
     <ContentPage.Resources>
-        <conv:BoolToImageConverter x:Key="ObtidoConverter" 
-                                   TrueImage="car_check.png" 
-                                   FalseImage="car.png" />
-        
-        <conv:BoolToImageConverter x:Key="DesejadoConverter" 
-                                   TrueImage="heart_check.png" 
-                                   FalseImage="heart.png" />
-        
+        <conv:BoolToImageConverter x:Key="ObtidoConverter" TrueImage="car_check.png" FalseImage="car.png" />
+        <conv:BoolToImageConverter x:Key="DesejadoConverter" TrueImage="heart_check.png" FalseImage="heart.png" />
     </ContentPage.Resources>
 
-    <StackLayout Padding="10" Spacing="10">
-        
-        <Label Text="Filtrar por:"/>
+    <StackLayout Spacing="12">
 
-        <Entry Placeholder="Nome" 
-               x:Name="txtFiltroNome"/>
+        <Label Text="Filtrar por:" Style="{StaticResource SectionLabel}" />
 
-        <StackLayout Orientation="Horizontal" Spacing="20">
-            
-            <Image x:Name="imgObtidoFilter" 
-                   Source="car.png" 
-                   HeightRequest="30" 
-                   WidthRequest="30">
+        <Entry x:Name="txtFiltroNome" Placeholder="Nome do carrinho" />
+
+        <StackLayout Orientation="Horizontal" Spacing="16" HorizontalOptions="Center">
+            <Image x:Name="imgObtidoFilter" Source="car.png" HeightRequest="30" WidthRequest="30">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="FilterObtido_Tapped"/>
                 </Image.GestureRecognizers>
             </Image>
-            <Image x:Name="imgDesejadoFilter" 
-                   Source="heart.png" 
-                   HeightRequest="30" 
-                   WidthRequest="30">
+            <Image x:Name="imgDesejadoFilter" Source="heart.png" HeightRequest="30" WidthRequest="30">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="FilterDesejado_Tapped"/>
                 </Image.GestureRecognizers>
             </Image>
         </StackLayout>
 
-        <Button Text="Filtrar" 
-                Clicked="btnFiltrar_Clicked"/>
-        
-        <Button Text="Mostrar Todos" 
-                Clicked="btnMostrarTodos"/>
-        
-        <ListView x:Name="lsvLista" SeparatorVisibility="None">
-            
+        <Button Text="Filtrar" Clicked="btnFiltrar_Clicked" />
+        <Button Text="Mostrar Todos" Clicked="btnMostrarTodos" />
+
+        <ListView x:Name="lsvLista" SeparatorVisibility="None" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame CornerRadius="10" Padding="10" Margin="5" BackgroundColor="#414142">
-                            
+                        <Frame>
                             <Grid ColumnDefinitions="60,*,Auto,Auto,Auto" RowDefinitions="Auto,Auto,Auto">
-                                <Image Grid.RowSpan="3" Source="{Binding DirImagem}" HeightRequest="50" WidthRequest="50"/>
+                                <Image Grid.RowSpan="3" Source="{Binding DirImagem}" HeightRequest="50" WidthRequest="50" />
 
-                                <Label Grid.Column="1" Text="{Binding Nome}" FontAttributes="Bold" FontSize="20"/>
-                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Ano, StringFormat='Ano: {0}'}"/>
-                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Lote, StringFormat='Lote: {0}'}"/>
+                                <Label Grid.Column="1" Text="{Binding Nome}" FontAttributes="Bold" FontSize="18" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Ano, StringFormat='Ano: {0}'}" />
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Lote, StringFormat='Lote: {0}'}" />
 
                                 <Image Grid.Column="2" 
-                       Source="{Binding Desejado, Converter={StaticResource DesejadoConverter}}"
-                       HeightRequest="30" WidthRequest="30">
+                                       Source="{Binding Desejado, Converter={StaticResource DesejadoConverter}}" 
+                                       HeightRequest="30" WidthRequest="30">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="tapChangeDesejo_Tapped" CommandParameter="{Binding .}"/>
+                                        <TapGestureRecognizer Tapped="tapChangeDesejo_Tapped" CommandParameter="{Binding .}" />
                                     </Image.GestureRecognizers>
                                 </Image>
 
                                 <Image Grid.Column="3" 
-                       Source="{Binding Obtido, Converter={StaticResource ObtidoConverter}}"
-                       HeightRequest="30" WidthRequest="30">
+                                       Source="{Binding Obtido, Converter={StaticResource ObtidoConverter}}" 
+                                       HeightRequest="30" WidthRequest="30">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="taChangeObtido_Tapped" CommandParameter="{Binding .}"/>
+                                        <TapGestureRecognizer Tapped="taChangeObtido_Tapped" CommandParameter="{Binding .}" />
                                     </Image.GestureRecognizers>
                                 </Image>
 
                                 <Image Grid.Column="4" Source="delete.png" HeightRequest="30" WidthRequest="30">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="tapDeletar_Tapped" CommandParameter="{Binding .}"/>
+                                        <TapGestureRecognizer Tapped="tapDeletar_Tapped" CommandParameter="{Binding .}" />
                                     </Image.GestureRecognizers>
                                 </Image>
-
                             </Grid>
                         </Frame>
                     </ViewCell>

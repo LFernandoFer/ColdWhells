@@ -10,7 +10,7 @@ public partial class pgCadCarro : ContentPage
 	{
 		InitializeComponent();
 	}
-    private async void OnSelecionarImagem_Clicked(object sender, EventArgs e)
+    private async void btnSelecionarImagem_Clicked(object sender, EventArgs e)
     {
         var result = await FilePicker.PickAsync();
         if (result != null)

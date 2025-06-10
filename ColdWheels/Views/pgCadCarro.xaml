@@ -4,51 +4,31 @@
              x:Class="ColdWheels.Views.pgCadCarro"
              Title="pgCadCarro">
     <ScrollView>
-        <StackLayout Padding="20" 
-                     Spacing="{StaticResource ControlSpacing}">
+        <StackLayout Spacing="12">
 
-            <Label Text="Cadastro" 
-                   FontSize="{StaticResource FontLG}" 
-                   TextColor="{StaticResource PrimaryBlue}" />
+            <Label Text="Cadastro de Carrinho" Style="{StaticResource TitleLabel}" />
 
-            <Image Source="car.png" 
-                   HeightRequest="200" 
-                   x:Name="carroImg" />
+            <Image x:Name="carroImg" HeightRequest="150" Source="car_placeholder.png" />
 
-            <Button Text="Selecionar Imagem" 
-                    Clicked="OnSelecionarImagem_Clicked" />
+            <Button Text="Selecionar Imagem" Clicked="btnSelecionarImagem_Clicked" />
 
-            <Label Text="Nome:" 
-                   FontSize="{StaticResource FontSM}" />
-            
-            <Entry Placeholder="Nome" 
-                   x:Name="txtNome" />
+            <Label Text="Nome do Modelo:" Style="{StaticResource SectionLabel}" />
+            <Entry x:Name="txtNome" Placeholder="Ex: Mustang GT" />
 
-            <Label Text="Lote:" 
-                   FontSize="{StaticResource FontSM}" />
-            
-            <Entry Placeholder="Lote" 
-                   x:Name="txtLote" />
+            <Label Text="Lote:" Style="{StaticResource SectionLabel}" />
+            <Entry x:Name="txtLote" Placeholder="Ex: A, B, C..." />
 
-            <Label Text="Ano:" 
-                   FontSize="{StaticResource FontSM}" />
-            
-            <Entry Placeholder="Ano:"
-                   x:Name="txtAno" />
+            <Label Text="Ano de Lançamento:" Style="{StaticResource SectionLabel}" />
+            <Entry x:Name="txtAno" Placeholder="Ex: 2023" Keyboard="Numeric" />
 
-            <Label Text="Obtido" 
-                   FontSize="{StaticResource FontSM}"/>
-            
-            <CheckBox x:Name="ckbObtido"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="30">
+                <CheckBox x:Name="ckbObtido" />
+                <Label Text="Obtido" VerticalOptions="Center" />
+                <CheckBox x:Name="ckbDesejado" />
+                <Label Text="Desejado" VerticalOptions="Center" />
+            </StackLayout>
 
-            <Label Text="Desejado" 
-                   FontSize="{StaticResource FontSM}"/>
-            
-            <CheckBox x:Name="ckbDesejado"/>
-
-            <Button Text="Salvar"
-                    x:Name="btnSalvar" 
-                    Clicked="btnSalvar_Clicked"/>
+            <Button Text="Salvar" Clicked="btnSalvar_Clicked" />
 
         </StackLayout>
     </ScrollView>
