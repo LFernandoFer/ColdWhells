@@ -4,38 +4,52 @@
              x:Class="ColdWheels.Views.pgCadCarro"
              Title="pgCadCarro">
     <ScrollView>
-    <StackLayout Padding="20">
-        <Label 
-            Text="Cadastro"/>
-        
-        <Image Source="car.png"
-               HeightRequest="200"
-               x:Name="carroImg"/>
-        <!--Adicionar a foto do carro em questao
-        gerar um imagePicker-->
-        <Button Text="Selecionar Imagem" Clicked="OnSelecionarImagem_Clicked" />
-        <Label Text="Nome:"/>
-        <Entry Placeholder="Nome"
-               x:Name="txtNome"/>
+        <StackLayout Padding="20" 
+                     Spacing="{StaticResource ControlSpacing}">
 
-        <Label Text="Lote:"/>
-        <Entry Placeholder="Lote"
-               x:Name="txtLote"/>
-    
-        <Label Text="Ano:"/>
-        <Entry Placeholder="Ano:"
-               x:Name="txtAno"/>
+            <Label Text="Cadastro" 
+                   FontSize="{StaticResource FontLG}" 
+                   TextColor="{StaticResource PrimaryBlue}" />
 
-        <Label Text="Obtido"/>
-        <CheckBox x:Name="ckbObtido"/>
+            <Image Source="car.png" 
+                   HeightRequest="200" 
+                   x:Name="carroImg" />
 
-        <Label Text="Desejado"/>
-        <CheckBox x:Name="ckbDesejado"/>
+            <Button Text="Selecionar Imagem" 
+                    Clicked="OnSelecionarImagem_Clicked" />
 
-        <Button Text="Salvar"
-                x:Name="btnSalvar"
-                Clicked="btnSalvar_Clicked"/>
-        
-    </StackLayout>
+            <Label Text="Nome:" 
+                   FontSize="{StaticResource FontSM}" />
+            
+            <Entry Placeholder="Nome" 
+                   x:Name="txtNome" />
+
+            <Label Text="Lote:" 
+                   FontSize="{StaticResource FontSM}" />
+            
+            <Entry Placeholder="Lote" 
+                   x:Name="txtLote" />
+
+            <Label Text="Ano:" 
+                   FontSize="{StaticResource FontSM}" />
+            
+            <Entry Placeholder="Ano:"
+                   x:Name="txtAno" />
+
+            <Label Text="Obtido" 
+                   FontSize="{StaticResource FontSM}"/>
+            
+            <CheckBox x:Name="ckbObtido"/>
+
+            <Label Text="Desejado" 
+                   FontSize="{StaticResource FontSM}"/>
+            
+            <CheckBox x:Name="ckbDesejado"/>
+
+            <Button Text="Salvar"
+                    x:Name="btnSalvar" 
+                    Clicked="btnSalvar_Clicked"/>
+
+        </StackLayout>
     </ScrollView>
 </ContentPage>

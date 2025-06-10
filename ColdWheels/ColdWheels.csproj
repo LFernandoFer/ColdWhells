@@ -67,6 +67,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Resources\Styles\Estilos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\pgCadCarro.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

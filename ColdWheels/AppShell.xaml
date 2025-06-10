@@ -3,37 +3,52 @@
     x:Class="ColdWheels.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:ColdWheels"
-    Shell.FlyoutBehavior="Flyout"
-    Title="ColdWheels"
     xmlns:Views="clr-namespace:ColdWheels.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Cold Wheels"
     Shell.TabBarIsVisible="False"
     Shell.NavBarIsVisible="False"
     >
 
+    
+    <Shell.TitleView>
+        <Grid Padding="8">
+            <Image Source="logo.jpg"
+             HeightRequest="40"
+             WidthRequest="120"
+             Aspect="AspectFit" />
+        </Grid>
+    </Shell.TitleView>
+
     <Shell.FlyoutHeader>
-        <StackLayout>
-        <Label Text="ColdWheels"
-               FontSize="30"
-               />
-        <Label Text="Usuário"/>
+        <StackLayout Padding="10" Spacing="4">
+            <Image Source="logo.jpg"
+             HeightRequest="60"
+             WidthRequest="180"
+             Aspect="AspectFit"/>
+            <Label Text="Cold Wheels"
+             FontSize="24"
+             TextColor="Black"/>
+            <Label Text="Usuário"
+             FontSize="14"
+             TextColor="Gray"/>
         </StackLayout>
     </Shell.FlyoutHeader>
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
-            Title="Cadastro"
-            ContentTemplate="{DataTemplate Views:pgCadCarro}" 
-            />
-        <ShellContent 
-            Title="Visualizar"
-            ContentTemplate="{DataTemplate Views:pgListaCarro}"
-            />
-        
+        Title="Cadastro"
+        ContentTemplate="{DataTemplate Views:pgCadCarro}" />
+        <ShellContent
+        Title="Visualizar"
+        ContentTemplate="{DataTemplate Views:pgListaCarro}" />
     </FlyoutItem>
 
     <Shell.FlyoutFooter>
-        <Label Text="Created by: Luís Fernando, Kauê e Paulo
-               Version 1.0.0.0"/>
+        <Label Text="Created by: Luís Fernando, Kauê e Paulo&#x0a;Version 1.0.0.0"
+           FontSize="12"
+           HorizontalOptions="Center"
+           Padding="10"/>
     </Shell.FlyoutFooter>
+
 </Shell>

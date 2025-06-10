@@ -1,6 +1,6 @@
 
 * Menu
- - Imagem no menu
+ ✅ Imagem no menu
  
 * Tela de cadastro
 
@@ -13,8 +13,8 @@
  ✅  || carrinhos adquiridos
  ✅  ||  ||  desejados
  ✅ Adicionar excluir 
- - Ajustar utilização dos filtros
- - Ajustar ícones de desejo/obtido ao mudar seus valores
+ ✅ Ajustar utilização dos filtros
+ ✅ Ajustar ícones de desejo/obtido ao mudar seus valores
  - Melhorar design
  
 
